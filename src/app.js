@@ -19,11 +19,7 @@ const {} = require('./db')
 
 
 app.post('/chat', (req, res) => {
-
-    successResponse.template.outputs[0].simpleText.text = process.env.msg || '여기에 텍스트를 입력'
-    successResponse.template.quickReplies = JSON.parse(process.env.quickReplies || '[]')
-
-    res.send(successResponse)
+    res.send(req.body)
 })
 
 module.exports = app;
